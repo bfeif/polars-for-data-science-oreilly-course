@@ -4,8 +4,6 @@ hvplot>=0.9.1
 jupyter
 lightgbm
 matplotlib
-nbconvert
-nbstripout
 notebook>=7.0.0
 pandas
 polars>=1.7.1
