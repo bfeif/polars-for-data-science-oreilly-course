@@ -2,11 +2,16 @@
 
 Welcome to "Polars for Data Science: Tackling Real-World Data Challenges"!
 
-This course, created in partnership with O'Reilly Media, is designed to provide a comprehensive and practical understanding of [Polars](https://github.com/pola-rs/polars), an innovative tool for data manipulation and analysis.
+This course, created in partnership with O'Reilly Media, is designed to provide a comprehensive and practical understanding of [Polars](https://github.com/pola-rs/polars), an innovative tool for data manipulation and analysis. The video course can be found on O'Reilly Media here: [Polars for Data Science: Tackling Real-World Data Challenges](https://learning.oreilly.com/course/polars-for-data/0642572019327/).
 
-Hosted entirely on this GitHub repository, this course will take you from the basics of Polars to integrating Polars into your data science workflow.
+This GitHub repository provides the course material, including:
+- Jupyter notebooks for each module of the course (see `module_notebooks/`).
+- A quiz Jupyter notebook for each module of the course (see `quiz_notebooks/`).
+- A corresponding quiz solution Jupyter notebook for each module of the course (see `quiz_solution_notebooks/`).
 
-The video course can be found on O'Reilly Media here: [Polars for Data Science: Tackling Real-World Data Challenges](https://learning.oreilly.com/course/polars-for-data/0642572019327/)
+The course will take you from zero Polars all the way to integrating Polars into your data science workflow. So buckle up!
+
+This README provides instructions for installing the required packages, as well as downloading the data files which are used throughout the course.
 
 ## Course Overview
 
@@ -81,6 +86,43 @@ To get started with the course, you'll need to set up your environment with the 
    ```bash
    pip install -r requirements.txt
    ```
+
+## Downloading the Data
+This course uses NYC Taxi data from the [NYC Taxi and Limousine Commission Page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page); more specifically, it uses:
+- Yellow Taxi Trip Records from 2024-02
+- Yellow Taxi Trip Records from 2024-03
+- Green Taxi Trip Records from 2024-03
+- Taxi Zone Lookup Table
+
+These data files (in their required formats) can all be downloaded from the public AWS S3 Bucket https://polars-for-data-science-oreilly-course-data-resources.s3.amazonaws.com. This can be done manually or using the AWS CLI:
+
+### Option 1: Downloading the Data Manually
+1. Visit the following URLs in your web browser. For each URL, you should be prompted  to download the file; you should download each file to the directory `data/`:
+   - https://polars-for-data-science-oreilly-course-data-resources.s3.amazonaws.com/yellow_tripdata_2024-02.parquet
+   - https://polars-for-data-science-oreilly-course-data-resources.s3.amazonaws.com/yellow_tripdata_2024-03.parquet
+   - https://polars-for-data-science-oreilly-course-data-resources.s3.amazonaws.com/yellow_tripdata_2024-03.csv
+   - https://polars-for-data-science-oreilly-course-data-resources.s3.amazonaws.com/green_tripdata_2024-03.parquet
+   - https://polars-for-data-science-oreilly-course-data-resources.s3.amazonaws.com/taxi_zone_lookup.csv
+
+### Option 2: Downloading the Data with the AWS CLI
+1. **Install the AWS CLI** (if not already installed):
+   - For macOS: `brew install awscli`
+   - For Windows: Download and run the installer from [AWS CLI Installation Guide](https://aws.amazon.com/cli/)
+
+2. **Download the data files using AWS CLI**:
+   ```bash
+   # Download all required files
+   aws s3 cp s3://polars-for-data-science-oreilly-course-data-resources/yellow_tripdata_2024-02.parquet data/
+   aws s3 cp s3://polars-for-data-science-oreilly-course-data-resources/yellow_tripdata_2024-03.parquet data/
+   aws s3 cp s3://polars-for-data-science-oreilly-course-data-resources/yellow_tripdata_2024-03.csv data/
+   aws s3 cp s3://polars-for-data-science-oreilly-course-data-resources/green_tripdata_2024-03.parquet data/
+   aws s3 cp s3://polars-for-data-science-oreilly-course-data-resources/taxi_zone_lookup.csv data/
+   ```
+
+   Note: The AWS CLI commands above should work without AWS credentials since these files are publicly accessible.
+
+
+
 
 ## Additional Notes
 
