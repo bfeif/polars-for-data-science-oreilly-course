@@ -11,3 +11,6 @@ tutorial_prompt.txt
 granular_course_outline.yaml
 quiz_questions.yaml
 quiz_questions_output_fmt.txt
+
+# Keep
+!data/.gitkeep
