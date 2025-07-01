@@ -2,7 +2,7 @@ altair>=5.4.0
 fastexcel
 hvplot>=0.9.1
 jupyter
-lightgbm
+lightgbm==4.4.0
 matplotlib
 notebook>=7.0.0
 pandas
